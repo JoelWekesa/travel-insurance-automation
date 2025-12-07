@@ -2,7 +2,7 @@
 
 Automated end-to-end testing for Old Mutual Kenya's Travel Insurance purchase flow using Playwright and Python, with Slack notifications for test results.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -16,23 +16,23 @@ Automated end-to-end testing for Old Mutual Kenya's Travel Insurance purchase fl
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 
-## 🎯 Overview
+## Overview
 
 This automated test script validates the complete travel insurance purchase journey on the Old Mutual Kenya platform. It simulates a real user purchasing travel insurance, from initial form filling through to payment processing, while capturing screenshots at each step and sending notifications to Slack.
 
 **Test URL:** https://www.oldmutual.co.ke/app/public/travel-insurance
 
-## ✨ Features
+## Features
 
-- ✅ Complete end-to-end automation of travel insurance purchase flow
-- 📸 Full-page screenshots captured at each major step
-- 🔔 Real-time Slack notifications on test completion (pass/fail)
-- 📍 Detailed failure reporting with exact step identification
-- ⏱️ Test execution duration tracking
-- 🎯 Step-by-step progress tracking
-- 🖼️ Error screenshots for debugging
+- Complete end-to-end automation of travel insurance purchase flow
+- Full-page screenshots captured at each major step
+- Real-time Slack notifications on test completion (pass/fail)
+- Detailed failure reporting with exact step identification
+- Test execution duration tracking
+- Step-by-step progress tracking
+- Error screenshots for debugging
 
-## 📦 Prerequisites
+## Prerequisites
 
 Before running this test, ensure you have the following installed:
 
@@ -40,7 +40,7 @@ Before running this test, ensure you have the following installed:
 - **pip** (Python package manager)
 - **Slack workspace** (for notifications)
 
-## 🚀 Installation
+## Installation
 
 ### 1. Clone the Repository
 ```bash
@@ -64,7 +64,7 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### 1. Set Up Slack Webhook
 
@@ -114,11 +114,11 @@ load_dotenv()
 
 Ensure you have a test image file named `download.jpeg` in the project directory for document uploads.
 
-## 🎮 Usage
+## Usage
 
 ### Run the Test
 ```bash
-python travel.py
+python3 travel.py
 ```
 
 ### Run in Headless Mode
@@ -149,7 +149,7 @@ crontab -e
 6. Arguments: `gen.py`
 7. Start in: `C:\path\to\project`
 
-## 📝 Test Flow
+## Test Flow
 
 The test executes the following steps:
 
@@ -197,13 +197,13 @@ The test executes the following steps:
 - Click "Process Payment"
 - Test completes successfully
 
-## 🔔 Slack Notifications
+## Slack Notifications
 
 ### Success Notification
 
 When the test passes, you'll receive:
 ```
-✅ Travel Insurance Test Alert
+Travel Insurance Test Alert
 
 Test Status: Passed ✓
 Duration: 45.3 seconds
@@ -219,14 +219,14 @@ All Steps Completed:
   ✓ Step 7: Terms & Conditions
   ✓ Step 8: Payment Processing
 
-📸 Screenshot saved: success.png
+Screenshot saved: success.png
 ```
 
 ### Failure Notification
 
 When the test fails, you'll receive:
 ```
-❌ Travel Insurance Test Alert
+Travel Insurance Test Alert
 @YourName (if configured)
 
 Test Status: Failed ✗
@@ -237,7 +237,7 @@ URL: https://www.oldmutual.co.ke/app/public/travel-insurance
 Error Details:
 Locator.fill: Error: Element is not visible
 
-📸 Screenshot saved: error.png
+Screenshot saved: error.png
 ```
 
 ### Enable Mobile Notifications
@@ -266,7 +266,7 @@ The test captures screenshots at each major step:
 
 All screenshots are saved in the project root directory with `full_page=True` to capture the entire page.
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -323,7 +323,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 ```
 
-## 📊 Test Results
+## Test Results
 
 Test results are communicated through:
 
@@ -340,11 +340,11 @@ Test results are communicated through:
 - Rotate Slack webhook URLs periodically
 - Use private channels for sensitive notifications
 
-## 📄 License
+## License
 
 [Your License Here - e.g., MIT License]
 
-## 👥 Contributing
+## Contributing
 
 Contributions are welcome! Please:
 
@@ -354,15 +354,15 @@ Contributions are welcome! Please:
 4. Push to the branch
 5. Open a Pull Request
 
-## 📧 Contact
+## Contact
 
 **Maintainer:** Joel Wekesa  
 **Company:** Old Mutual East Africa  
-**Team:** Digital & Innovation
+**Team:** Digital & Data
 
 For issues or questions, please contact [your-email@oldmutual.com]
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with [Playwright](https://playwright.dev/)
 - Notifications powered by [Slack](https://slack.com/)
