@@ -136,7 +136,7 @@ browser = playwright.chromium.launch(headless=True)
 crontab -e
 
 # Add this line to run every day at 9 AM
-0 9 * * * cd /path/to/project && /path/to/venv/bin/python gen.py
+0 9 * * * cd /path/to/project && /path/to/venv/bin/python travel.py
 ```
 
 **Using Task Scheduler (Windows):**
@@ -146,7 +146,7 @@ crontab -e
 3. Set trigger (e.g., daily at 9 AM)
 4. Action: Start a program
 5. Program: `C:\path\to\venv\Scripts\python.exe`
-6. Arguments: `gen.py`
+6. Arguments: `travel.py`
 7. Start in: `C:\path\to\project`
 
 ## Test Flow
