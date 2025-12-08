@@ -114,3 +114,111 @@
 2025-12-08 04:20:34,890 - INFO - Scheduler initialized - Next run in 1 hour
 2025-12-08 04:20:34,890 - INFO - ================================================================================
 2025-12-08 04:20:34,890 - INFO - 
+2025-12-08 07:45:39,668 - INFO - ================================================================================
+2025-12-08 07:45:39,668 - INFO - Travel Insurance Test Automation Scheduler Started
+2025-12-08 07:45:39,668 - INFO - Tests will run every 1 hour
+2025-12-08 07:45:39,668 - INFO - Environment: production
+2025-12-08 07:45:39,668 - INFO - ================================================================================
+2025-12-08 07:45:39,668 - INFO - 
+2025-12-08 07:45:39,668 - INFO - Running initial test on startup...
+2025-12-08 07:45:39,668 - INFO - ================================================================================
+2025-12-08 07:45:39,668 - INFO - Starting scheduled test at 2025-12-08 07:45:39
+2025-12-08 07:45:39,669 - INFO - ================================================================================
+2025-12-08 07:46:11,073 - INFO - Test completed successfully!
+2025-12-08 07:46:11,073 - INFO - ================================================================================
+2025-12-08 07:46:11,073 - INFO - 
+2025-12-08 07:46:11,074 - INFO - Scheduler initialized - Next run in 1 hour
+2025-12-08 07:46:11,074 - INFO - ================================================================================
+2025-12-08 07:46:11,074 - INFO - 
+2025-12-08 04:49:06,810 - INFO - ================================================================================
+2025-12-08 04:49:06,810 - INFO - Travel Insurance Test Automation Scheduler Started
+2025-12-08 04:49:06,810 - INFO - Tests will run every 1 hour
+2025-12-08 04:49:06,810 - INFO - Environment: production
+2025-12-08 04:49:06,810 - INFO - ================================================================================
+2025-12-08 04:49:06,810 - INFO - 
+2025-12-08 04:49:06,810 - INFO - Running initial test on startup...
+2025-12-08 04:49:06,811 - INFO - ================================================================================
+2025-12-08 04:49:06,811 - INFO - Starting scheduled test at 2025-12-08 04:49:06
+2025-12-08 04:49:06,811 - INFO - ================================================================================
+2025-12-08 04:49:06,997 - ERROR - ❌ Test failed: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/appuser/.cache/ms-playwright/chromium-1194/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-Yl7Tjt --remote-debugging-pipe --no-startup-window
+  - <launched> pid=19
+  - [pid=19][err] [19:33:1208/044906.983146:ERROR:dbus/bus.cc:408] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+  - [pid=19][err] [19:19:1208/044906.984079:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:249] Missing X server or $DISPLAY
+  - [pid=19][err] [19:19:1208/044906.984088:ERROR:ui/aura/env.cc:257] The platform failed to initialize.  Exiting.
+  - [pid=19] <gracefully close start>
+  - [pid=19] <kill>
+  - [pid=19] <will force kill>
+  - [pid=19] <process did exit: exitCode=1, signal=null>
+  - [pid=19] starting temporary directories cleanup
+  - [pid=19] finished temporary directories cleanup
+  - [pid=19] <gracefully close end>
+
+2025-12-08 04:49:06,998 - INFO - ================================================================================
+2025-12-08 04:49:06,998 - INFO - 
+2025-12-08 04:49:06,998 - INFO - Scheduler initialized - Next run in 1 hour
+2025-12-08 04:49:06,998 - INFO - ================================================================================
+2025-12-08 04:49:06,998 - INFO - 
+2025-12-08 04:52:11,751 - INFO - ================================================================================
+2025-12-08 04:52:11,751 - INFO - Travel Insurance Test Automation Scheduler Started
+2025-12-08 04:52:11,751 - INFO - Tests will run every 1 hour
+2025-12-08 04:52:11,751 - INFO - Environment: production
+2025-12-08 04:52:11,751 - INFO - ================================================================================
+2025-12-08 04:52:11,751 - INFO - 
+2025-12-08 04:52:11,752 - INFO - Running initial test on startup...
+2025-12-08 04:52:11,752 - INFO - ================================================================================
+2025-12-08 04:52:11,752 - INFO - Starting scheduled test at 2025-12-08 04:52:11
+2025-12-08 04:52:11,752 - INFO - ================================================================================
+2025-12-08 04:52:11,930 - ERROR - ❌ Test failed: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/appuser/.cache/ms-playwright/chromium-1194/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-X56Bxe --remote-debugging-pipe --no-startup-window
+  - <launched> pid=19
+  - [pid=19][err] [19:34:1208/045211.918921:ERROR:dbus/bus.cc:408] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+  - [pid=19][err] [19:19:1208/045211.919918:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:249] Missing X server or $DISPLAY
+  - [pid=19][err] [19:19:1208/045211.919928:ERROR:ui/aura/env.cc:257] The platform failed to initialize.  Exiting.
+  - [pid=19] <gracefully close start>
+  - [pid=19] <kill>
+  - [pid=19] <will force kill>
+  - [pid=19] <process did exit: exitCode=1, signal=null>
+  - [pid=19] starting temporary directories cleanup
+  - [pid=19] finished temporary directories cleanup
+  - [pid=19] <gracefully close end>
+
+2025-12-08 04:52:11,930 - INFO - ================================================================================
+2025-12-08 04:52:11,930 - INFO - 
+2025-12-08 04:52:11,931 - INFO - Scheduler initialized - Next run in 1 hour
+2025-12-08 04:52:11,931 - INFO - ================================================================================
+2025-12-08 04:52:11,931 - INFO - 
+2025-12-08 04:53:40,291 - INFO - ================================================================================
+2025-12-08 04:53:40,292 - INFO - Travel Insurance Test Automation Scheduler Started
+2025-12-08 04:53:40,292 - INFO - Tests will run every 1 hour
+2025-12-08 04:53:40,292 - INFO - Environment: production
+2025-12-08 04:53:40,292 - INFO - ================================================================================
+2025-12-08 04:53:40,292 - INFO - 
+2025-12-08 04:53:40,292 - INFO - Running initial test on startup...
+2025-12-08 04:53:40,292 - INFO - ================================================================================
+2025-12-08 04:53:40,292 - INFO - Starting scheduled test at 2025-12-08 04:53:40
+2025-12-08 04:53:40,292 - INFO - ================================================================================
+2025-12-08 04:54:09,648 - INFO - Test completed successfully!
+2025-12-08 04:54:09,648 - INFO - ================================================================================
+2025-12-08 04:54:09,648 - INFO - 
+2025-12-08 04:54:09,648 - INFO - Scheduler initialized - Next run in 1 hour
+2025-12-08 04:54:09,648 - INFO - ================================================================================
+2025-12-08 04:54:09,649 - INFO - 
