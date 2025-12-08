@@ -16,17 +16,13 @@ if not os.path.exists(SCREENSHOTS_DIR):
     os.makedirs(SCREENSHOTS_DIR)
 
 def get_screenshot_path(filename):
-    """
-    Generate screenshot path with timestamp
-    """
+    """Generate screenshot path with timestamp"""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     return os.path.join(SCREENSHOTS_DIR, f"{timestamp}_{filename}")
 
 
 def send_slack_notification(message):
-    """
-    Send simple Slack notification via webhook
-    """
+    """Send simple Slack notification via webhook"""
     webhook_url = os.getenv("SLACK_WEBHOOK_URL") or slack_webhook_url
     
     try:
@@ -64,18 +60,16 @@ def send_slack_notification(message):
         response = requests.post(webhook_url, json=payload)
         
         if response.status_code == 200:
-            print("Slack notification sent successfully!")
+            print("✅ Slack notification sent successfully!")
         else:
-            print(f"Failed to send Slack notification: {response.status_code}")
+            print(f"❌ Failed to send Slack notification: {response.status_code}")
         
     except Exception as e:
-        print(f"Error sending Slack notification: {str(e)}")
+        print(f"❌ Error sending Slack notification: {str(e)}")
 
 
 def get_failure_step(error_message):
-    """
-    Determine which step failed based on error message
-    """
+    """Determine which step failed based on error message"""
     error_lower = error_message.lower()
     
     if "select cover" in error_lower:
@@ -100,7 +94,10 @@ def get_failure_step(error_message):
 
 
 def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False)
+    # Get headless mode from environment variable
+    headless = os.getenv("HEADLESS_MODE", "true").lower() == "true"
+    
+    browser = playwright.chromium.launch(headless=headless)
     context = browser.new_context()
     page = context.new_page()
     
@@ -110,6 +107,7 @@ def run(playwright: Playwright) -> None:
     try:
         # Step 1: Navigate and select cover
         current_step = "Step 1: Select Cover Type"
+        print(f"{current_step}")
         page.goto("https://www.oldmutual.co.ke/app/public/travel-insurance")
         page.wait_for_load_state("networkidle")
         page.wait_for_timeout(300)
@@ -120,6 +118,7 @@ def run(playwright: Playwright) -> None:
         
         # Step 2: Fill personal details
         current_step = "Step 2: Personal Information"
+        print(f"{current_step}")
         page.get_by_role("textbox", name="Fullname").fill("Test User")
         page.get_by_role("textbox", name="Phone").fill("0712345678")
         page.get_by_role("textbox", name="Email").fill("test@user.com")
@@ -138,6 +137,7 @@ def run(playwright: Playwright) -> None:
         
         # Step 3: Fill travel details
         current_step = "Step 3: Travel Details"
+        print(f"{current_step}")
         page.locator(".inner-circle").first.click()
         page.wait_for_timeout(300)
         
@@ -166,6 +166,7 @@ def run(playwright: Playwright) -> None:
         
         # Step 4: Review and proceed
         current_step = "Step 4: Review & Proceed"
+        print(f"{current_step}")
         page.screenshot(path=get_screenshot_path("4.png"), full_page=True)
         page.wait_for_load_state("networkidle")
         page.get_by_role("button", name="Continue").click()
@@ -177,6 +178,7 @@ def run(playwright: Playwright) -> None:
         
         # Step 5: Add traveller details
         current_step = "Step 5: Traveller Details & Documents"
+        print(f"{current_step}")
         page.screenshot(path=get_screenshot_path("6.png"), full_page=True)
         page.wait_for_load_state("networkidle")
         page.get_by_role("button", name="Continue").click()
@@ -221,6 +223,7 @@ def run(playwright: Playwright) -> None:
         
         # Step 6: Beneficiary details
         current_step = "Step 6: Beneficiary Details"
+        print(f"{current_step}")
         page.get_by_role("textbox", name="Fullname").fill("Test User")
         page.wait_for_timeout(200)
         
@@ -237,6 +240,7 @@ def run(playwright: Playwright) -> None:
         
         # Step 7: Terms and conditions
         current_step = "Step 7: Terms & Conditions"
+        print(f"{current_step}")
         page.get_by_test_id("consentForProductsAndServicesRelatedWithMyPolicy").locator("#input").check()
         page.wait_for_timeout(200)
         
@@ -250,6 +254,7 @@ def run(playwright: Playwright) -> None:
         
         # Step 8: Process payment
         current_step = "Step 8: Payment Processing"
+        print(f"{current_step}")
         page.get_by_role("button", name="Process Payment").click()
         page.wait_for_timeout(2000)
         
@@ -259,7 +264,8 @@ def run(playwright: Playwright) -> None:
         # Calculate duration
         duration = (datetime.now() - start_time).total_seconds()
         
-        print("Test completed successfully!")
+        print(f"\nTest completed successfully!")
+        print(f"Duration: {duration:.1f} seconds")
         print(f"Screenshots saved in: {SCREENSHOTS_DIR}/")
         
         success_message = (
@@ -304,8 +310,8 @@ def run(playwright: Playwright) -> None:
             f"\n📸 Error screenshot: `{error_screenshot}`"
         )
         
-        print(f"❌ Test failed at {failure_step}: {str(e)}")
-        print(f"📸 Error screenshot saved: {error_screenshot}")
+        print(f"\n❌ Test failed at {failure_step}: {str(e)}")
+        print(f"Error screenshot saved: {error_screenshot}")
         print(f"\nFull traceback:\n{error_traceback}")
         
         send_slack_notification(error_message)
@@ -316,5 +322,6 @@ def run(playwright: Playwright) -> None:
         browser.close()
 
 
-with sync_playwright() as playwright:
-    run(playwright)
+if __name__ == "__main__":
+    with sync_playwright() as playwright:
+        run(playwright)
