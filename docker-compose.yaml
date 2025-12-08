@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  travel-insurance-test:
+    build: .
+    container_name: travel-insurance-test
+    volumes:
+      # Persist screenshots and logs
+      - ./screenshots:/app/screenshots
+      - ./logs:/app/logs
+    
+    env_file:
+      - .env
+    
+    restart: unless-stopped
+    
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
