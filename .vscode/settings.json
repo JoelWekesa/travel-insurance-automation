@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "c:\\Users\\ADMIN\\travel-insurance-automation\\.venv\\Scripts\\python.exe",
+    "python.analysis.extraPaths": [
+        "c:\\Users\\ADMIN\\travel-insurance-automation\\.venv\\Lib\\site-packages"
+    ]
+}
