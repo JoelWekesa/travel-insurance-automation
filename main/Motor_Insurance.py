@@ -293,28 +293,21 @@ def run_motor_insurance():
             # Step 7: Document Upload
             current_step = "Step 7: Document Upload"
             print(f"{current_step}")
-            page.wait_for_timeout(1000)
+            page.wait_for_timeout(2000)
             
-            # Upload National ID
+            # Upload documents using simpler selectors
             try:
-                page.locator("omk-document-upload").filter(has_text="Copy of National ID").locator("#button").first.set_input_files("../download.jpeg")
-                page.wait_for_timeout(1000)
-            except:
-                print("  National ID upload skipped")
-            
-            # Upload KRA
-            try:
-                page.locator("omk-document-upload").filter(has_text="Copy of KRA").locator("#button").first.set_input_files("../download.jpeg")
-                page.wait_for_timeout(1000)
-            except:
-                print("  KRA upload skipped")
-            
-            # Upload Logbook
-            try:
-                page.locator("#upload-logBook #button").first.set_input_files("../download.jpeg")
-                page.wait_for_timeout(1000)
-            except:
-                print("  Logbook upload skipped")
+                # Find all file upload buttons and upload to each
+                upload_buttons = page.locator("#button").all()
+                for i, button in enumerate(upload_buttons[:3]):  # Upload to first 3 buttons
+                    try:
+                        button.set_input_files("../download.jpeg")
+                        page.wait_for_timeout(500)
+                        print(f"  Document {i+1} uploaded")
+                    except:
+                        print(f"  Document {i+1} upload skipped")
+            except Exception as e:
+                print(f"  Document upload error: {e}")
             
             close_zoho_if_present(page)
             page.get_by_role("button", name="Continue").click()
